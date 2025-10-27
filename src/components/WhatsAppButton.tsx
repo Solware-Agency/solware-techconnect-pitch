@@ -6,7 +6,7 @@ export function WhatsAppButton() {
       href="https://wa.me/584129974533"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 group"
+      className="fixed bottom-8 right-8 z-[55] group"
       aria-label="Contactar por WhatsApp"
     >
       <div className="relative">

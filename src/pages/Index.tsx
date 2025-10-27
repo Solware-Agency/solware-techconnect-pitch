@@ -88,14 +88,14 @@ const Index = () => {
         {/* Slide 2 - La Necesidad */}
         <Slide>
           <div className="space-y-12">
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 mb-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-5xl md:text-6xl font-bold mb-4">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 px-4">
                   Procesos del{" "}
                   <span className="text-amarillo">siglo XIX</span>
                   {" "}en clínicas de hoy
@@ -146,13 +146,13 @@ const Index = () => {
         {/* Slide 3 - El Diagnóstico */}
         <Slide>
           <div className="space-y-12">
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 mb-8">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-5xl md:text-6xl font-bold"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
               >
                 El diagnóstico: no es de{" "}
                 <span className="text-verde">salud</span>, es de{" "}
@@ -219,13 +219,13 @@ const Index = () => {
         {/* Slide 4 - La Solución: Solware */}
         <Slide>
           <div className="space-y-12">
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 mb-8">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-5xl md:text-6xl font-bold"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
               >
                 La solución:{" "}
                 <span className="bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent">
@@ -294,13 +294,13 @@ const Index = () => {
         {/* Slide 5 - Impacto y Métricas */}
         <Slide>
           <div className="space-y-12">
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 mb-8">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-5xl md:text-6xl font-bold"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
               >
                 Impacto{" "}
                 <span className="text-verde">medible</span>
@@ -355,13 +355,13 @@ const Index = () => {
         {/* Slide 6 - Caso / Testimonios */}
         <Slide>
           <div className="space-y-12">
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 mb-8">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-5xl md:text-6xl font-bold"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
               >
                 Caso real:{" "}
                 <span className="text-morado">Conspat</span>
@@ -432,7 +432,7 @@ const Index = () => {
         <Slide>
           <div className="container mx-auto px-6 md:px-12 max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent px-4">
                 La Cruda Realidad
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -458,7 +458,7 @@ const Index = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-5xl md:text-6xl font-bold">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold px-4">
                 Listos para{" "}
                 <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
                   inspirar y aportar

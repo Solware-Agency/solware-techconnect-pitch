@@ -12,6 +12,9 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const totalSlides = children.length;
+  const touchStartX = useRef<number>(0);
+  const touchStartY = useRef<number>(0);
+  const isDragging = useRef<boolean>(false);
 
   // Detect mobile viewport
   useEffect(() => {
@@ -60,12 +63,50 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
     return () => container.removeEventListener("scroll", handleScroll);
   }, [onSlideChange, isMobile]);
 
-  // Convert vertical mouse wheel to horizontal scroll (only on desktop)
   const handleWheel = (e: React.WheelEvent) => {
     if (containerRef.current && !isMobile) {
       e.preventDefault();
       containerRef.current.scrollLeft += e.deltaY;
     }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    isDragging.current = true;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging.current) return;
+
+    const touchCurrentX = e.touches[0].clientX;
+    const touchCurrentY = e.touches[0].clientY;
+    const deltaX = touchStartX.current - touchCurrentX;
+    const deltaY = touchStartY.current - touchCurrentY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && !isMobile) {
+      e.preventDefault();
+    }
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!isDragging.current) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaX = touchStartX.current - touchEndX;
+    const deltaY = touchStartY.current - touchEndY;
+    const swipeThreshold = 50;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold && !isMobile) {
+      if (deltaX > 0 && currentSlide < totalSlides - 1) {
+        scrollToSlide(currentSlide + 1);
+      } else if (deltaX < 0 && currentSlide > 0) {
+        scrollToSlide(currentSlide - 1);
+      }
+    }
+
+    isDragging.current = false;
   };
 
   const scrollToSlide = (index: number) => {
@@ -92,6 +133,9 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
       <div
         ref={containerRef}
         onWheel={handleWheel}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         className={`h-full w-full ${
           isMobile
             ? "overflow-y-scroll overflow-x-hidden snap-y snap-mandatory flex flex-col"
@@ -99,14 +143,15 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
         }`}
         style={{
           scrollbarGutter: "stable",
-          scrollSnapType: isMobile ? "y mandatory" : "x mandatory"
+          scrollSnapType: isMobile ? "y mandatory" : "x mandatory",
+          touchAction: isMobile ? "pan-y" : "pan-x"
         }}
       >
         {children}
       </div>
 
       {/* Navigation arrows */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4">
+      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-4">
         <Button
           variant="outline"
           size="icon"
@@ -148,7 +193,7 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
       </div>
 
       {/* Slide counter */}
-      <div className="fixed top-8 right-8 z-50 text-sm text-muted-foreground bg-tarjeta/60 backdrop-blur-md px-4 py-2 rounded-full border border-border/30">
+      <div className="fixed top-8 right-8 z-[60] text-sm text-muted-foreground bg-tarjeta/80 backdrop-blur-md px-4 py-2 rounded-full border border-border/30">
         {currentSlide + 1} / {totalSlides}
       </div>
     </div>
