@@ -41,16 +41,24 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
     if (!container) return;
 
     const handleScroll = () => {
-      const scrollLeft = container.scrollLeft;
-      const slideWidth = container.clientWidth;
-      const newSlide = Math.round(scrollLeft / slideWidth);
-      setCurrentSlide(newSlide);
-      onSlideChange?.(newSlide);
+      if (isMobile) {
+        const scrollTop = container.scrollTop;
+        const slideHeight = container.clientHeight;
+        const newSlide = Math.round(scrollTop / slideHeight);
+        setCurrentSlide(newSlide);
+        onSlideChange?.(newSlide);
+      } else {
+        const scrollLeft = container.scrollLeft;
+        const slideWidth = container.clientWidth;
+        const newSlide = Math.round(scrollLeft / slideWidth);
+        setCurrentSlide(newSlide);
+        onSlideChange?.(newSlide);
+      }
     };
 
     container.addEventListener("scroll", handleScroll);
     return () => container.removeEventListener("scroll", handleScroll);
-  }, [onSlideChange]);
+  }, [onSlideChange, isMobile]);
 
   // Convert vertical mouse wheel to horizontal scroll (only on desktop)
   const handleWheel = (e: React.WheelEvent) => {
@@ -84,12 +92,15 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
       <div
         ref={containerRef}
         onWheel={handleWheel}
-        className={`h-full w-full scroll-smooth ${
+        className={`h-full w-full ${
           isMobile
-            ? "overflow-y-auto overflow-x-hidden snap-y snap-mandatory flex-col"
-            : "overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex"
+            ? "overflow-y-scroll overflow-x-hidden snap-y snap-mandatory flex flex-col"
+            : "overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth"
         }`}
-        style={{ scrollbarGutter: "stable" }}
+        style={{
+          scrollbarGutter: "stable",
+          scrollSnapType: isMobile ? "y mandatory" : "x mandatory"
+        }}
       >
         {children}
       </div>

@@ -70,18 +70,13 @@ All colors MUST be HSL.
     @apply text-justify;
   }
   
-  /* Disable vertical scroll globally on desktop */
+  /* Disable vertical scroll globally */
   html {
-    overflow-y: hidden;
+    overflow: hidden;
   }
-  
-  /* Enable vertical scroll on mobile */
-  @media (max-width: 768px) {
-    html,
-    body {
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
+
+  body {
+    overflow: hidden;
   }
   
   /* Hide scrollbar */
