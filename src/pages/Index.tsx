@@ -48,12 +48,12 @@ const Index = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="space-y-4"
+              className="space-y-4 flex flex-col items-center justify-center"
             >
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl text-center">
                 Propuesta de ponencia (30 minutos)
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground text-center">
                 12 y 13 de noviembre · Hotel Manantial, Valencia
               </p>
             </motion.div>
