@@ -40,7 +40,7 @@ const Index = () => {
               className="text-6xl md:text-7xl font-bold leading-tight"
             >
               <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
-                Tech Connect 2025
+                Solware x TechConnect
               </span>
             </motion.h1>
 
