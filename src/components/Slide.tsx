@@ -9,7 +9,7 @@ interface SlideProps {
 export function Slide({ children, className = "" }: SlideProps) {
   return (
     <motion.section
-      className={`w-screen min-h-screen snap-center flex items-center justify-center p-8 md:p-16 md:min-w-[100vw] ${className}`}
+      className={`w-screen h-screen snap-center flex items-center justify-center p-8 md:p-16 md:min-w-[100vw] flex-shrink-0 ${className}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
