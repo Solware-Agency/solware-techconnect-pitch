@@ -9,7 +9,16 @@ interface HorizontalCarouselProps {
 export function HorizontalCarousel({ children }: HorizontalCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const totalSlides = children.length;
+
+  // Detect mobile viewport
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -41,9 +50,9 @@ export function HorizontalCarousel({ children }: HorizontalCarouselProps) {
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Convert vertical mouse wheel to horizontal scroll
+  // Convert vertical mouse wheel to horizontal scroll (only on desktop)
   const handleWheel = (e: React.WheelEvent) => {
-    if (containerRef.current) {
+    if (containerRef.current && !isMobile) {
       e.preventDefault();
       containerRef.current.scrollLeft += e.deltaY;
     }
@@ -51,21 +60,33 @@ export function HorizontalCarousel({ children }: HorizontalCarouselProps) {
 
   const scrollToSlide = (index: number) => {
     if (containerRef.current) {
-      const slideWidth = containerRef.current.clientWidth;
-      containerRef.current.scrollTo({
-        left: slideWidth * index,
-        behavior: "smooth",
-      });
+      if (isMobile) {
+        const slideHeight = containerRef.current.clientHeight;
+        containerRef.current.scrollTo({
+          top: slideHeight * index,
+          behavior: "smooth",
+        });
+      } else {
+        const slideWidth = containerRef.current.clientWidth;
+        containerRef.current.scrollTo({
+          left: slideWidth * index,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
   return (
     <div className="relative h-screen w-screen overflow-hidden">
-      {/* Horizontal scroll container */}
+      {/* Scroll container - horizontal on desktop, vertical on mobile */}
       <div
         ref={containerRef}
         onWheel={handleWheel}
-        className="h-full w-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex"
+        className={`h-full w-full scroll-smooth ${
+          isMobile
+            ? "overflow-y-auto overflow-x-hidden snap-y snap-mandatory flex-col"
+            : "overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex"
+        }`}
         style={{ scrollbarGutter: "stable" }}
       >
         {children}

@@ -65,14 +65,29 @@ All colors MUST be HSL.
     padding: 0;
   }
   
-  /* Disable vertical scroll globally */
+  /* Justified text for paragraphs */
+  p {
+    @apply text-justify;
+  }
+  
+  /* Disable vertical scroll globally on desktop */
   html {
     overflow-y: hidden;
+  }
+  
+  /* Enable vertical scroll on mobile */
+  @media (max-width: 768px) {
+    html,
+    body {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
   }
   
   /* Custom scrollbar for horizontal scroll */
   ::-webkit-scrollbar {
     height: 8px;
+    width: 8px;
   }
   
   ::-webkit-scrollbar-track {

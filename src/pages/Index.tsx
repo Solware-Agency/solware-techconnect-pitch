@@ -3,6 +3,7 @@ import { Slide } from "@/components/Slide";
 import { MetricCard } from "@/components/MetricCard";
 import { GlassCard } from "@/components/GlassCard";
 import { Logo } from "@/components/Logo";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { 
@@ -24,16 +25,9 @@ const Index = () => {
     <>
       <HorizontalCarousel>
         {/* Slide 1 - Portada */}
-        <Slide>
+        <Slide className="relative">
+          <Logo variant="image" className="absolute top-8 left-8 z-10" />
           <div className="text-center space-y-8">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <Logo className="justify-center mb-8" />
-            </motion.div>
 
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
@@ -516,7 +510,8 @@ const Index = () => {
         </Slide>
 
         {/* Slide 8 - CTA para Organizadores */}
-        <Slide>
+        <Slide className="relative">
+          <Logo variant="image" className="absolute top-8 left-8 z-10" />
           <div className="space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -560,11 +555,23 @@ const Index = () => {
               <div className="space-y-2 text-muted-foreground">
                 <p className="flex items-center justify-center gap-2">
                   <Mail className="h-4 w-4 text-acento" />
-                  <span>contacto@solhub.agency</span>
+                  <a 
+                    href="mailto:ventas@solware.agency"
+                    className="hover:text-acento transition-colors"
+                  >
+                    ventas@solware.agency
+                  </a>
                 </p>
                 <p className="flex items-center justify-center gap-2">
                   <MessageCircle className="h-4 w-4 text-verde" />
-                  <span>[WhatsApp disponible bajo solicitud]</span>
+                  <a 
+                    href="https://wa.me/584129974533"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-verde transition-colors"
+                  >
+                    +58 412-997-4533
+                  </a>
                 </p>
               </div>
             </GlassCard>
@@ -589,12 +596,10 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <div className="pt-8">
-              <Logo className="justify-center" />
-            </div>
           </div>
         </Slide>
       </HorizontalCarousel>
+      <WhatsAppButton />
     </>
   );
 };
