@@ -1,20 +1,35 @@
 interface LogoProps {
   className?: string;
   variant?: "text" | "image";
+  href?: string;
 }
 
-export function Logo({ className = "", variant = "text" }: LogoProps) {
+export function Logo({ className = "", variant = "text", href }: LogoProps) {
   if (variant === "image") {
-    return (
-      <div className={className}>
-        <img
-          src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/imagenes/Logos/SolHub/Logo_solhub.webp"
-          alt="Solware Logo"
-          className="h-12 md:h-16 w-auto"
-          loading="eager"
-        />
-      </div>
+    const imageContent = (
+      <img
+        src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/imagenes/Logos/SolHub/Logo_solhub.webp"
+        alt="Solware Logo"
+        className="h-12 md:h-16 w-auto"
+        loading="eager"
+      />
     );
+
+    if (href) {
+      return (
+        <a 
+          href={href} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={`${className} transition-opacity hover:opacity-80`}
+          aria-label="Visitar Solware"
+        >
+          {imageContent}
+        </a>
+      );
+    }
+
+    return <div className={className}>{imageContent}</div>;
   }
 
   return (

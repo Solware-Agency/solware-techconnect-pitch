@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 
 interface HorizontalCarouselProps {
   children: React.ReactNode[];
+  onSlideChange?: (index: number) => void;
 }
 
-export function HorizontalCarousel({ children }: HorizontalCarouselProps) {
+export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -44,11 +45,12 @@ export function HorizontalCarousel({ children }: HorizontalCarouselProps) {
       const slideWidth = container.clientWidth;
       const newSlide = Math.round(scrollLeft / slideWidth);
       setCurrentSlide(newSlide);
+      onSlideChange?.(newSlide);
     };
 
     container.addEventListener("scroll", handleScroll);
     return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [onSlideChange]);
 
   // Convert vertical mouse wheel to horizontal scroll (only on desktop)
   const handleWheel = (e: React.WheelEvent) => {

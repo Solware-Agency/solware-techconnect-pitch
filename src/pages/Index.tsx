@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { HorizontalCarousel } from "@/components/HorizontalCarousel";
 import { Slide } from "@/components/Slide";
 import { MetricCard } from "@/components/MetricCard";
 import { GlassCard } from "@/components/GlassCard";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { VideoSlide } from "@/components/VideoSlide";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { 
@@ -21,12 +23,14 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
   return (
     <>
-      <HorizontalCarousel>
+      <HorizontalCarousel onSlideChange={setActiveSlide}>
         {/* Slide 1 - Portada */}
         <Slide className="relative">
-          <Logo variant="image" className="absolute top-8 left-8 z-10" />
+          <Logo variant="image" href="https://www.solware.agency" className="absolute top-8 left-8 z-10" />
           <div className="text-center space-y-8">
 
             <motion.h1
@@ -424,94 +428,28 @@ const Index = () => {
           </div>
         </Slide>
 
-        {/* Slide 7 - Propuesta de Ponencia */}
+        {/* Slide 7 - La Cruda Realidad */}
         <Slide>
-          <div className="space-y-12">
-            <div className="text-center space-y-6">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-5xl md:text-6xl font-bold"
-              >
-                Propuesta de{" "}
-                <span className="text-acento">ponencia</span>
-              </motion.h2>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="text-xl text-muted-foreground"
-              >
-                30 minutos · Tech Connect Venezuela 2025
-              </motion.p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <GlassCard delay={0.4}>
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="bg-acento text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Introducción</h3>
-                    <p className="text-muted-foreground text-sm">Situación operativa en salud (5 min)</p>
-                  </div>
-                </div>
-              </GlassCard>
-
-              <GlassCard delay={0.5}>
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="bg-verde text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Diagnóstico y datos</h3>
-                    <p className="text-muted-foreground text-sm">Análisis del problema con métricas (7 min)</p>
-                  </div>
-                </div>
-              </GlassCard>
-
-              <GlassCard delay={0.6}>
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="bg-morado text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Buenas prácticas</h3>
-                    <p className="text-muted-foreground text-sm">Demostración de flujo digital (10 min)</p>
-                  </div>
-                </div>
-              </GlassCard>
-
-              <GlassCard delay={0.7}>
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="bg-amarillo text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Q&A y llamado a la acción</h3>
-                    <p className="text-muted-foreground text-sm">Preguntas y cierre inspirador (8 min)</p>
-                  </div>
-                </div>
-              </GlassCard>
-            </div>
-
-            <GlassCard delay={0.8} className="max-w-3xl mx-auto text-center border-t-4 border-acento">
-              <p className="text-lg text-foreground leading-relaxed">
-                Buscamos compartir aprendizajes concretos y acelerar la digitalización 
-                responsable del sector salud en Venezuela.
+          <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent">
+                La Cruda Realidad
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                Así trabajaban antes de implementar Solware
               </p>
-            </GlassCard>
+            </div>
+            
+            <VideoSlide 
+              videoUrl="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/SolHoub/Conspat%20x%20Solware%20(1)%20(1).mp4"
+              isActive={activeSlide === 6}
+            />
           </div>
         </Slide>
 
         {/* Slide 8 - CTA para Organizadores */}
         <Slide className="relative">
-          <Logo variant="image" className="absolute top-8 left-8 z-10" />
+          <Logo variant="image" href="https://www.solware.agency" className="absolute top-8 left-8 z-10" />
           <div className="space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
