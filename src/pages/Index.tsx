@@ -29,9 +29,9 @@ const Index = () => {
     <>
       <HorizontalCarousel onSlideChange={setActiveSlide}>
         {/* Slide 1 - Portada */}
-        <Slide className="relative">
+        <Slide className="relative flex items-center justify-center">
           <Logo variant="image" href="https://www.solware.agency" className="absolute top-8 left-8 z-10" />
-          <div className="text-center space-y-8">
+          <div className="text-center space-y-8 w-full">
 
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
