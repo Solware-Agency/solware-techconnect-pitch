@@ -1,13 +1,601 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { HorizontalCarousel } from "@/components/HorizontalCarousel";
+import { Slide } from "@/components/Slide";
+import { MetricCard } from "@/components/MetricCard";
+import { GlassCard } from "@/components/GlassCard";
+import { Logo } from "@/components/Logo";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { 
+  ChevronRight, 
+  Clock, 
+  Users, 
+  TrendingDown, 
+  TrendingUp,
+  FileCheck,
+  AlertCircle,
+  Target,
+  Zap,
+  Mail,
+  MessageCircle
+} from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <HorizontalCarousel>
+        {/* Slide 1 - Portada */}
+        <Slide>
+          <div className="text-center space-y-8">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="mb-8"
+            >
+              <Logo className="justify-center mb-8" />
+            </motion.div>
+
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-6xl md:text-7xl font-bold leading-tight"
+            >
+              <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
+                Tech Connect 2025
+              </span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="space-y-4"
+            >
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                Propuesta de ponencia (30 minutos)
+              </p>
+              <p className="text-lg text-muted-foreground">
+                12 y 13 de noviembre · Hotel Manantial, Valencia
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="pt-8"
+            >
+              <GlassCard className="max-w-3xl mx-auto">
+                <p className="text-2xl md:text-3xl font-medium leading-relaxed">
+                  Transformando la salud venezolana: del caos operativo a la eficiencia digital
+                </p>
+              </GlassCard>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="pt-8"
+            >
+              <Button size="lg" className="bg-acento hover:bg-acento/90 text-primary-foreground shadow-glow">
+                Explorar presentación
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </motion.div>
+          </div>
+        </Slide>
+
+        {/* Slide 2 - La Necesidad */}
+        <Slide>
+          <div className="space-y-12">
+            <div className="text-center space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-5xl md:text-6xl font-bold mb-4">
+                  Procesos del{" "}
+                  <span className="text-amarillo">siglo XIX</span>
+                  {" "}en clínicas de hoy
+                </h2>
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                En clínicas y laboratorios se pierden horas por procesos manuales, 
+                reimpresiones, dependencia de memorias individuales y cero trazabilidad.
+              </motion.p>
+            </div>
+
+            <GlassCard delay={0.4} className="max-w-3xl mx-auto border-l-4 border-fucsia">
+              <div className="flex gap-4 items-start">
+                <AlertCircle className="h-8 w-8 text-fucsia flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-2xl italic mb-2 text-foreground/90">
+                    "Pierdo más tiempo buscando exámenes que haciéndolos."
+                  </p>
+                  <p className="text-muted-foreground">— Gerente de laboratorio</p>
+                </div>
+              </div>
+            </GlassCard>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-8">
+              <MetricCard
+                icon={Clock}
+                value="500+"
+                label="Horas perdidas al año por búsquedas y reimpresiones"
+                delay={0.6}
+              />
+              <MetricCard
+                icon={Users}
+                value="200+"
+                label="Pacientes que no pudieron ser atendidos"
+                delay={0.7}
+              />
+            </div>
+          </div>
+        </Slide>
+
+        {/* Slide 3 - El Diagnóstico */}
+        <Slide>
+          <div className="space-y-12">
+            <div className="text-center space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-5xl md:text-6xl font-bold"
+              >
+                El diagnóstico: no es de{" "}
+                <span className="text-verde">salud</span>, es de{" "}
+                <span className="text-acento">operatividad</span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                El problema no es de salud; es de operatividad. Falta flujo, automatización y visibilidad.
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <GlassCard delay={0.4} className="border-l-4 border-destructive">
+                <div className="flex items-start gap-4">
+                  <TrendingDown className="h-8 w-8 text-destructive flex-shrink-0" />
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 text-foreground">Problemas identificados</h3>
+                    <ul className="space-y-3 text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-destructive mt-1">•</span>
+                        <span>Datos dispersos en carpetas y grupos de WhatsApp</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-destructive mt-1">•</span>
+                        <span>Procesos manuales que consumen tiempo valioso</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-destructive mt-1">•</span>
+                        <span>Reimpresiones constantes y errores de entrega</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-destructive mt-1">•</span>
+                        <span>Sin analítica operativa ni trazabilidad</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </GlassCard>
+
+              <GlassCard delay={0.5} className="border-l-4 border-amarillo">
+                <div className="flex items-start gap-4">
+                  <Target className="h-8 w-8 text-amarillo flex-shrink-0" />
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 text-foreground">La verdad oculta</h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      En una clínica pequeña, se pierden unas <strong className="text-amarillo">500 horas al año</strong> solo en búsquedas y re-impresiones.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Eso equivale a <strong className="text-verde">$5,000 - $10,000 USD</strong> perdidos anualmente y <strong className="text-acento">200 pacientes</strong> no atendidos.
+                    </p>
+                  </div>
+                </div>
+              </GlassCard>
+            </div>
+          </div>
+        </Slide>
+
+        {/* Slide 4 - La Solución: Solware */}
+        <Slide>
+          <div className="space-y-12">
+            <div className="text-center space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-5xl md:text-6xl font-bold"
+              >
+                La solución:{" "}
+                <span className="bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent">
+                  Solware
+                </span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                Plataforma que centraliza pacientes, pagos, reportes y analítica para clínicas y laboratorios.
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <GlassCard delay={0.4} className="md:col-span-2">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Zap className="h-6 w-6 text-acento flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-lg mb-1">Unifica operaciones</h4>
+                        <p className="text-muted-foreground text-sm">Todo en una sola plataforma centralizada</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Clock className="h-6 w-6 text-verde flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-lg mb-1">Reduce tiempos de entrega</h4>
+                        <p className="text-muted-foreground text-sm">De 15 minutos a 7 minutos promedio</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <FileCheck className="h-6 w-6 text-morado flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-lg mb-1">Trazabilidad y control</h4>
+                        <p className="text-muted-foreground text-sm">Seguimiento completo de cada proceso</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <TrendingUp className="h-6 w-6 text-amarillo flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-lg mb-1">Analítica en tiempo real</h4>
+                        <p className="text-muted-foreground text-sm">Dashboards con métricas operativas</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </GlassCard>
+
+              <GlassCard delay={0.5} className="md:col-span-2 border-t-4 border-acento">
+                <p className="text-center text-lg text-muted-foreground italic">
+                  Arquitectura orientada a eficiencia operativa y experiencia de usuario
+                </p>
+              </GlassCard>
+            </div>
+          </div>
+        </Slide>
+
+        {/* Slide 5 - Impacto y Métricas */}
+        <Slide>
+          <div className="space-y-12">
+            <div className="text-center space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-5xl md:text-6xl font-bold"
+              >
+                Impacto{" "}
+                <span className="text-verde">medible</span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-xl text-muted-foreground max-w-3xl mx-auto"
+              >
+                Resultados reales en clínicas y laboratorios
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <MetricCard
+                icon={Clock}
+                value="500+"
+                label="Horas ahorradas al año"
+                delay={0.4}
+              />
+              <MetricCard
+                icon={Users}
+                value="200+"
+                label="Pacientes adicionales atendidos"
+                delay={0.5}
+              />
+              <MetricCard
+                icon={TrendingDown}
+                value="15 → 7 min"
+                label="Reducción en tiempos de entrega"
+                delay={0.6}
+              />
+              <MetricCard
+                icon={FileCheck}
+                value="Menos errores"
+                label="Reducción significativa en reimpresiones"
+                delay={0.7}
+              />
+            </div>
+
+            <GlassCard delay={0.8} className="max-w-3xl mx-auto text-center">
+              <p className="text-muted-foreground italic">
+                Métricas basadas en implementación piloto en Conspat y análisis operativo de clínicas pequeñas en Venezuela
+              </p>
+            </GlassCard>
+          </div>
+        </Slide>
+
+        {/* Slide 6 - Caso / Testimonios */}
+        <Slide>
+          <div className="space-y-12">
+            <div className="text-center space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-5xl md:text-6xl font-bold"
+              >
+                Caso real:{" "}
+                <span className="text-morado">Conspat</span>
+              </motion.h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <GlassCard delay={0.4} className="border-l-4 border-destructive">
+                <h3 className="text-2xl font-semibold mb-4 text-destructive">Antes</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive mt-1">•</span>
+                    <span>Recepción con carpetas físicas y llamadas constantes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive mt-1">•</span>
+                    <span>Búsquedas manuales de 8-12 minutos por examen</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive mt-1">•</span>
+                    <span>Tres grupos de WhatsApp para coordinación</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive mt-1">•</span>
+                    <span>Entrega de resultados en 15 minutos promedio</span>
+                  </li>
+                </ul>
+              </GlassCard>
+
+              <GlassCard delay={0.5} className="border-l-4 border-verde">
+                <h3 className="text-2xl font-semibold mb-4 text-verde">Después</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-verde mt-1">•</span>
+                    <span>Dashboard digital con trazabilidad completa</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-verde mt-1">•</span>
+                    <span>Búsqueda instantánea de cualquier examen</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-verde mt-1">•</span>
+                    <span>Comunicación centralizada en la plataforma</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-verde mt-1">•</span>
+                    <span>Entrega de resultados en 7 minutos promedio</span>
+                  </li>
+                </ul>
+              </GlassCard>
+            </div>
+
+            <GlassCard delay={0.7} className="max-w-3xl mx-auto border-l-4 border-acento">
+              <div className="flex gap-4 items-start">
+                <MessageCircle className="h-8 w-8 text-acento flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-xl italic mb-2 text-foreground/90">
+                    "Los dueños dejaron de vivir en WhatsApp. Ya no necesitan tres grupos distintos para saber si entregaron un examen."
+                  </p>
+                  <p className="text-muted-foreground">— Equipo Solware, implementación Conspat</p>
+                </div>
+              </div>
+            </GlassCard>
+          </div>
+        </Slide>
+
+        {/* Slide 7 - Propuesta de Ponencia */}
+        <Slide>
+          <div className="space-y-12">
+            <div className="text-center space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-5xl md:text-6xl font-bold"
+              >
+                Propuesta de{" "}
+                <span className="text-acento">ponencia</span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-xl text-muted-foreground"
+              >
+                30 minutos · Tech Connect Venezuela 2025
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <GlassCard delay={0.4}>
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="bg-acento text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Introducción</h3>
+                    <p className="text-muted-foreground text-sm">Situación operativa en salud (5 min)</p>
+                  </div>
+                </div>
+              </GlassCard>
+
+              <GlassCard delay={0.5}>
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="bg-verde text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Diagnóstico y datos</h3>
+                    <p className="text-muted-foreground text-sm">Análisis del problema con métricas (7 min)</p>
+                  </div>
+                </div>
+              </GlassCard>
+
+              <GlassCard delay={0.6}>
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="bg-morado text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Buenas prácticas</h3>
+                    <p className="text-muted-foreground text-sm">Demostración de flujo digital (10 min)</p>
+                  </div>
+                </div>
+              </GlassCard>
+
+              <GlassCard delay={0.7}>
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="bg-amarillo text-primary-foreground w-8 h-8 rounded-lg flex items-center justify-center font-bold flex-shrink-0">
+                    4
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Q&A y llamado a la acción</h3>
+                    <p className="text-muted-foreground text-sm">Preguntas y cierre inspirador (8 min)</p>
+                  </div>
+                </div>
+              </GlassCard>
+            </div>
+
+            <GlassCard delay={0.8} className="max-w-3xl mx-auto text-center border-t-4 border-acento">
+              <p className="text-lg text-foreground leading-relaxed">
+                Buscamos compartir aprendizajes concretos y acelerar la digitalización 
+                responsable del sector salud en Venezuela.
+              </p>
+            </GlassCard>
+          </div>
+        </Slide>
+
+        {/* Slide 8 - CTA para Organizadores */}
+        <Slide>
+          <div className="space-y-12 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-5xl md:text-6xl font-bold">
+                Listos para{" "}
+                <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
+                  inspirar y aportar
+                </span>
+              </h2>
+
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Solicitamos un espacio de 30 minutos para presentar el caso de Solware 
+                y conversar sobre cómo acelerar la transformación digital en salud.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap gap-4 justify-center"
+            >
+              <Button size="lg" className="bg-acento hover:bg-acento/90 text-primary-foreground shadow-glow">
+                <Mail className="mr-2 h-5 w-5" />
+                Contactar para agenda
+              </Button>
+              <Button size="lg" variant="outline" className="border-acento/30 hover:bg-acento/10">
+                <FileCheck className="mr-2 h-5 w-5" />
+                Descargar dossier
+              </Button>
+            </motion.div>
+
+            <GlassCard delay={0.4} className="max-w-2xl mx-auto">
+              <h3 className="text-xl font-semibold mb-4">Información de contacto</h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p className="flex items-center justify-center gap-2">
+                  <Mail className="h-4 w-4 text-acento" />
+                  <span>contacto@solhub.agency</span>
+                </p>
+                <p className="flex items-center justify-center gap-2">
+                  <MessageCircle className="h-4 w-4 text-verde" />
+                  <span>[WhatsApp disponible bajo solicitud]</span>
+                </p>
+              </div>
+            </GlassCard>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="pt-8"
+            >
+              <p className="text-sm text-muted-foreground">
+                Presentación de referencia disponible en:{" "}
+                <a 
+                  href="https://audience.solhub.agency" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-acento hover:underline"
+                >
+                  audience.solhub.agency
+                </a>
+              </p>
+            </motion.div>
+
+            <div className="pt-8">
+              <Logo className="justify-center" />
+            </div>
+          </div>
+        </Slide>
+      </HorizontalCarousel>
+    </>
   );
 };
 
