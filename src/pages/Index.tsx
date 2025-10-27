@@ -30,9 +30,7 @@ const Index = () => {
       <HorizontalCarousel onSlideChange={setActiveSlide}>
         {/* Slide 1 - Portada */}
         <Slide className="relative flex items-center justify-center">
-          <div className="absolute top-8 left-8 md:top-16 md:left-16 z-10">
-            <Logo variant="image" href="https://www.solware.agency" />
-          </div>
+          <Logo variant="image" href="https://www.solware.agency" className="absolute top-8 left-8 z-10" />
           <div className="text-center space-y-8 w-full">
 
             <motion.h1
@@ -451,9 +449,7 @@ const Index = () => {
 
         {/* Slide 8 - CTA para Organizadores */}
         <Slide className="relative">
-          <div className="absolute top-8 left-8 md:top-16 md:left-16 z-10">
-            <Logo variant="image" href="https://www.solware.agency" />
-          </div>
+          <Logo variant="image" href="https://www.solware.agency" className="absolute top-8 left-8 z-10" />
           <div className="space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

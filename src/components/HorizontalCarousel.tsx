@@ -86,8 +86,8 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
         onWheel={handleWheel}
         className={`h-full w-full scroll-smooth ${
           isMobile
-            ? "flex flex-col overflow-y-auto overflow-x-hidden snap-y snap-mandatory"
-            : "flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory"
+            ? "overflow-y-auto overflow-x-hidden snap-y snap-mandatory flex-col"
+            : "overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex"
         }`}
         style={{ scrollbarGutter: "stable" }}
       >
