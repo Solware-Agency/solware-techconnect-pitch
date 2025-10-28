@@ -24,7 +24,7 @@ export function Navbar({ currentSlide, totalSlides, onSlideClick }: NavbarProps)
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-[70] bg-tarjeta/60 backdrop-blur-md border-b border-border/30"
+      className="fixed top-0 left-0 right-0 z-50 bg-tarjeta/60 backdrop-blur-md border-b border-border/30"
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Logo variant="image" href="https://www.solware.agency" className="flex-shrink-0" />
