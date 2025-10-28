@@ -1,18 +1,15 @@
-import { useState, useRef } from "react";
-import { HorizontalCarousel } from "@/components/HorizontalCarousel";
-import { Slide } from "@/components/Slide";
+import { useState, useEffect, useRef } from "react";
 import { MetricCard } from "@/components/MetricCard";
 import { GlassCard } from "@/components/GlassCard";
-import { Logo } from "@/components/Logo";
 import { VideoSlide } from "@/components/VideoSlide";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { 
-  ChevronRight, 
-  Clock, 
-  Users, 
-  TrendingDown, 
+import {
+  ChevronRight,
+  Clock,
+  Users,
+  TrendingDown,
   TrendingUp,
   FileCheck,
   AlertCircle,
@@ -23,28 +20,53 @@ import {
 } from "lucide-react";
 
 const Index = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const scrollToSlideRef = useRef<((index: number) => void) | null>(null);
+  const [activeSection, setActiveSection] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleSlideClick = (index: number) => {
-    if (scrollToSlideRef.current) {
-      scrollToSlideRef.current(index);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const sections = container.querySelectorAll('section[data-section]');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionIndex = parseInt(entry.target.getAttribute('data-section') || '0');
+            setActiveSection(sectionIndex);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (index: number) => {
+    const section = document.querySelector(`section[data-section="${index}"]`);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   return (
     <>
       <Navbar
-        currentSlide={activeSlide}
+        currentSlide={activeSection}
         totalSlides={8}
-        onSlideClick={handleSlideClick}
+        onSlideClick={scrollToSection}
       />
-      <HorizontalCarousel
-        onSlideChange={setActiveSlide}
-        scrollToSlideRef={scrollToSlideRef}
+      <div
+        ref={containerRef}
+        className="overflow-y-auto overflow-x-hidden h-screen scroll-smooth"
+        style={{ scrollPaddingTop: '80px' }}
       >
-        {/* Slide 1 - Portada */}
-        <Slide className="relative flex items-center justify-center">
+        {/* Section 1 - Portada */}
+        <section data-section="0" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
           <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 w-full">
 
             <motion.h1
@@ -97,10 +119,10 @@ const Index = () => {
               </Button>
             </motion.div>
           </div>
-        </Slide>
+        </section>
 
-        {/* Slide 2 - La Necesidad */}
-        <Slide>
+        {/* Section 2 - La Necesidad */}
+        <section data-section="1" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.div
@@ -155,10 +177,10 @@ const Index = () => {
               />
             </div>
           </div>
-        </Slide>
+        </section>
 
-        {/* Slide 3 - El Diagnóstico */}
-        <Slide>
+        {/* Section 3 - El Diagnóstico */}
+        <section data-section="2" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -228,10 +250,10 @@ const Index = () => {
               </GlassCard>
             </div>
           </div>
-        </Slide>
+        </section>
 
-        {/* Slide 4 - La Solución: Solware */}
-        <Slide>
+        {/* Section 4 - La Solución: Solware */}
+        <section data-section="3" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -303,10 +325,10 @@ const Index = () => {
               </GlassCard>
             </div>
           </div>
-        </Slide>
+        </section>
 
-        {/* Slide 5 - Impacto y Métricas */}
-        <Slide>
+        {/* Section 5 - Impacto y Métricas */}
+        <section data-section="4" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -364,10 +386,10 @@ const Index = () => {
               </p>
             </GlassCard>
           </div>
-        </Slide>
+        </section>
 
-        {/* Slide 6 - Caso / Testimonios */}
-        <Slide>
+        {/* Section 6 - Caso / Testimonios */}
+        <section data-section="5" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -440,11 +462,11 @@ const Index = () => {
               </div>
             </GlassCard>
           </div>
-        </Slide>
+        </section>
 
-        {/* Slide 7 - La Cruda Realidad */}
-        <Slide>
-          <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+        {/* Section 7 - La Cruda Realidad */}
+        <section data-section="6" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+          <div className="w-full max-w-6xl">
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent px-3 sm:px-4">
                 La Cruda Realidad
@@ -453,16 +475,15 @@ const Index = () => {
                 Así trabajaban antes de implementar Solware
               </p>
             </div>
-            
-            <VideoSlide 
+
+            <VideoSlide
               videoUrl="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/SolHoub/Conspat%20x%20Solware%20(1)%20(1).mp4"
-              isActive={activeSlide === 6}
             />
           </div>
-        </Slide>
+        </section>
 
-        {/* Slide 8 - CTA para Organizadores */}
-        <Slide className="relative">
+        {/* Section 8 - CTA para Organizadores */}
+        <section data-section="7" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
           <div className="space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -532,8 +553,8 @@ const Index = () => {
             </motion.div>
 
           </div>
-        </Slide>
-      </HorizontalCarousel>
+        </section>
+      </div>
     </>
   );
 };
