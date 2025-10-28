@@ -383,47 +383,47 @@ const Index = () => {
               </motion.h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <GlassCard delay={0.4} className="border-l-4 border-destructive">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto">
+              <GlassCard delay={0.4} className="border-l-4 border-destructive h-full">
                 <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-destructive">Antes</h3>
-                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground">
+                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Recepción con carpetas físicas y llamadas constantes</span>
+                    <span className="text-destructive mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Recepción con carpetas físicas y llamadas constantes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Búsquedas manuales de 8-12 minutos por examen</span>
+                    <span className="text-destructive mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Búsquedas manuales de 8-12 minutos por examen</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Tres grupos de WhatsApp para coordinación</span>
+                    <span className="text-destructive mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Tres grupos de WhatsApp para coordinación</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Entrega de resultados en 15 minutos promedio</span>
+                    <span className="text-destructive mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Entrega de resultados en 15 minutos promedio</span>
                   </li>
                 </ul>
               </GlassCard>
 
-              <GlassCard delay={0.5} className="border-l-4 border-verde">
+              <GlassCard delay={0.5} className="border-l-4 border-verde h-full">
                 <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-verde">Después</h3>
-                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground">
+                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   <li className="flex items-start gap-2">
-                    <span className="text-verde mt-1">•</span>
-                    <span>Dashboard digital con trazabilidad completa</span>
+                    <span className="text-verde mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Dashboard digital con trazabilidad completa</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-verde mt-1">•</span>
-                    <span>Búsqueda instantánea de cualquier examen</span>
+                    <span className="text-verde mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Búsqueda instantánea de cualquier examen</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-verde mt-1">•</span>
-                    <span>Comunicación centralizada en la plataforma</span>
+                    <span className="text-verde mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Comunicación centralizada en la plataforma</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-verde mt-1">•</span>
-                    <span>Entrega de resultados en 7 minutos promedio</span>
+                    <span className="text-verde mt-1 flex-shrink-0">•</span>
+                    <span className="flex-1">Entrega de resultados en 7 minutos promedio</span>
                   </li>
                 </ul>
               </GlassCard>
