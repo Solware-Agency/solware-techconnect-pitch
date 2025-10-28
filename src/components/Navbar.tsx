@@ -59,32 +59,7 @@ export function Navbar({ currentSlide, totalSlides, onSlideClick }: NavbarProps)
           ))}
         </div>
 
-        <div className="flex md:hidden items-center gap-3">
-          <div className="flex gap-1">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => onSlideClick(index)}
-                className={`h-1.5 rounded-full transition-all ${
-                  index === currentSlide
-                    ? "w-6 bg-acento"
-                    : "w-1.5 bg-muted-foreground/30"
-                }`}
-                aria-label={`Ir a diapositiva ${index + 1}`}
-                aria-current={index === currentSlide ? "page" : undefined}
-              />
-            ))}
-          </div>
-          <span className="text-sm font-medium text-foreground whitespace-nowrap">
-            {currentSlide + 1}/{totalSlides}
-          </span>
-        </div>
-
-        <div className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground whitespace-nowrap bg-tarjeta/50 px-3 py-1.5 rounded-lg border border-border/30">
-          <span className="text-acento">{currentSlide + 1}</span>
-          <span className="text-muted-foreground">/</span>
-          <span>{totalSlides}</span>
-        </div>
+        <div className="md:hidden w-8"></div>
       </div>
     </motion.nav>
   );
