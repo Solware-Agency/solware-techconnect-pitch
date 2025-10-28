@@ -107,17 +107,6 @@ const Index = () => {
               </GlassCard>
             </motion.div>
 
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="pt-3 sm:pt-4 md:pt-6"
-            >
-              <Button size="lg" className="bg-acento hover:bg-acento/90 text-primary-foreground shadow-glow text-sm sm:text-base">
-                Explorar presentación
-                <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
-            </motion.div>
           </div>
         </section>
 
