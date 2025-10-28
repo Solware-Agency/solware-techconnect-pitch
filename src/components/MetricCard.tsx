@@ -15,15 +15,15 @@ export function MetricCard({ icon: Icon, value, label, delay = 0 }: MetricCardPr
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
-      className="bg-tarjeta/50 backdrop-blur-md rounded-2xl p-6 border border-border/30 shadow-neumorf hover:shadow-glow transition-all duration-300"
+      className="bg-tarjeta/60 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-border/40 shadow-neumorf hover:shadow-glow transition-all duration-300"
     >
-      <div className="flex items-start gap-4">
-        <div className="p-3 bg-acento/10 rounded-xl">
-          <Icon className="h-6 w-6 text-acento" />
+      <div className="flex items-start gap-3 sm:gap-4">
+        <div className="p-2 sm:p-3 bg-acento/10 rounded-lg sm:rounded-xl">
+          <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-acento" />
         </div>
-        <div className="flex-1">
-          <div className="text-3xl font-bold text-foreground mb-1">{value}</div>
-          <div className="text-sm text-muted-foreground">{label}</div>
+        <div className="flex-1 min-w-0">
+          <div className="text-2xl sm:text-3xl font-bold text-foreground mb-1">{value}</div>
+          <div className="text-xs sm:text-sm text-muted-foreground leading-snug">{label}</div>
         </div>
       </div>
     </motion.div>

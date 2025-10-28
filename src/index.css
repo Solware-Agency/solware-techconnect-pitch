@@ -64,15 +64,19 @@ All colors MUST be HSL.
     margin: 0;
     padding: 0;
   }
-  
-  /* Justified text for paragraphs with word-wrap */
+
+  /* Justified text for paragraphs with responsive adjustments */
   p {
     @apply text-justify;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
   }
-  
+
+  /* Mobile: left-align for better readability */
+  @media (max-width: 640px) {
+    p {
+      text-align: left;
+    }
+  }
+
   /* Disable vertical scroll globally */
   html {
     overflow: hidden;
@@ -81,7 +85,7 @@ All colors MUST be HSL.
   body {
     overflow: hidden;
   }
-  
+
   /* Hide scrollbar */
   ::-webkit-scrollbar {
     display: none;
@@ -90,5 +94,34 @@ All colors MUST be HSL.
   * {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Improve text contrast on mobile */
+  @media (max-width: 640px) {
+    .text-muted-foreground {
+      opacity: 0.9;
+    }
+  }
+
+  /* Better line-height for small screens */
+  @media (max-width: 768px) {
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+  }
+
+  /* Optimize spacing for very small screens */
+  @media (max-width: 375px) {
+    .space-y-12 > * + * {
+      margin-top: 2rem;
+    }
+
+    .space-y-8 > * + * {
+      margin-top: 1.5rem;
+    }
   }
 }

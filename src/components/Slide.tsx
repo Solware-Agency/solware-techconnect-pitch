@@ -15,7 +15,7 @@ export function Slide({ children, className = "" }: SlideProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="max-w-6xl w-full h-full overflow-y-auto overflow-x-hidden px-6 pt-24 pb-20 md:px-16 md:pt-28 md:pb-24 flex items-center">
+      <div className="max-w-6xl w-full h-full overflow-y-auto overflow-x-hidden px-4 sm:px-6 md:px-12 lg:px-16 pt-20 sm:pt-24 md:pt-28 pb-16 sm:pb-20 md:pb-24 flex items-center">
         <div className="w-full">
           {children}
         </div>

@@ -46,13 +46,13 @@ const Index = () => {
       >
         {/* Slide 1 - Portada */}
         <Slide className="relative flex items-center justify-center">
-          <div className="text-center space-y-6 md:space-y-8 w-full">
+          <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 w-full">
 
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight px-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight px-3 sm:px-4"
             >
               <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
                 Solware x TechConnect
@@ -63,12 +63,12 @@ const Index = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="space-y-3 flex flex-col items-center justify-center"
+              className="space-y-2 sm:space-y-3 flex flex-col items-center justify-center"
             >
-              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl text-center px-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl text-center px-3 sm:px-4">
                 Propuesta de ponencia (30 minutos)
               </p>
-              <p className="text-base md:text-lg text-muted-foreground text-center px-4">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-center px-3 sm:px-4">
                 12 y 13 de noviembre · Hotel Manantial, Valencia
               </p>
             </motion.div>
@@ -77,10 +77,10 @@ const Index = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="pt-4 md:pt-6"
+              className="pt-3 sm:pt-4 md:pt-6"
             >
-              <GlassCard className="max-w-4xl mx-auto">
-                <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed break-words">
+              <GlassCard className="max-w-4xl mx-auto px-3">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed break-words">
                   Transformando la salud venezolana: del caos operativo a la eficiencia digital
                 </p>
               </GlassCard>
@@ -90,11 +90,11 @@ const Index = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="pt-4 md:pt-6"
+              className="pt-3 sm:pt-4 md:pt-6"
             >
-              <Button size="lg" className="bg-acento hover:bg-acento/90 text-primary-foreground shadow-glow">
+              <Button size="lg" className="bg-acento hover:bg-acento/90 text-primary-foreground shadow-glow text-sm sm:text-base">
                 Explorar presentación
-                <ChevronRight className="ml-2 h-5 w-5" />
+                <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </motion.div>
           </div>
@@ -110,7 +110,7 @@ const Index = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 px-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 px-3 sm:px-4">
                   Procesos del{" "}
                   <span className="text-amarillo">siglo XIX</span>
                   {" "}en clínicas de hoy
@@ -122,21 +122,21 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4"
               >
-                En clínicas y laboratorios se pierden horas por procesos manuales, 
+                En clínicas y laboratorios se pierden horas por procesos manuales,
                 reimpresiones, dependencia de memorias individuales y cero trazabilidad.
               </motion.p>
             </div>
 
             <GlassCard delay={0.4} className="max-w-3xl mx-auto border-l-4 border-fucsia">
-              <div className="flex gap-4 items-start">
-                <AlertCircle className="h-8 w-8 text-fucsia flex-shrink-0 mt-1" />
+              <div className="flex gap-3 sm:gap-4 items-start">
+                <AlertCircle className="h-6 w-6 sm:h-8 sm:w-8 text-fucsia flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-2xl italic mb-2 text-foreground/90">
+                  <p className="text-lg sm:text-xl md:text-2xl italic mb-2 text-foreground/90">
                     "Pierdo más tiempo buscando exámenes que haciéndolos."
                   </p>
-                  <p className="text-muted-foreground">— Gerente de laboratorio</p>
+                  <p className="text-sm sm:text-base text-muted-foreground">— Gerente de laboratorio</p>
                 </div>
               </div>
             </GlassCard>
@@ -167,7 +167,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4"
               >
                 El diagnóstico: no es de{" "}
                 <span className="text-verde">salud</span>, es de{" "}
@@ -187,11 +187,11 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <GlassCard delay={0.4} className="border-l-4 border-destructive">
-                <div className="flex items-start gap-4">
-                  <TrendingDown className="h-8 w-8 text-destructive flex-shrink-0" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <TrendingDown className="h-6 w-6 sm:h-8 sm:w-8 text-destructive flex-shrink-0" />
                   <div>
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">Problemas identificados</h3>
-                    <ul className="space-y-3 text-muted-foreground">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-3 text-foreground">Problemas identificados</h3>
+                    <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <span className="text-destructive mt-1">•</span>
                         <span>Datos dispersos en carpetas y grupos de WhatsApp</span>
@@ -214,14 +214,14 @@ const Index = () => {
               </GlassCard>
 
               <GlassCard delay={0.5} className="border-l-4 border-amarillo">
-                <div className="flex items-start gap-4">
-                  <Target className="h-8 w-8 text-amarillo flex-shrink-0" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <Target className="h-6 w-6 sm:h-8 sm:w-8 text-amarillo flex-shrink-0" />
                   <div>
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">La verdad oculta</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-3 text-foreground">La verdad oculta</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                       En una clínica pequeña, se pierden unas <strong className="text-amarillo">500 horas al año</strong> solo en búsquedas y re-impresiones.
                     </p>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                       Eso equivale a <strong className="text-verde">$5,000 - $10,000 USD</strong> perdidos anualmente y <strong className="text-acento">200 pacientes</strong> no atendidos.
                     </p>
                   </div>
@@ -240,7 +240,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4"
               >
                 La solución:{" "}
                 <span className="bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent">
@@ -253,7 +253,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4"
               >
                 Plataforma que centraliza pacientes, pagos, reportes y analítica para clínicas y laboratorios.
               </motion.p>
@@ -262,35 +262,35 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <GlassCard delay={0.4} className="md:col-span-2">
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-acento flex-shrink-0 mt-1" />
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-acento flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-lg mb-1">Unifica operaciones</h4>
-                        <p className="text-muted-foreground text-sm">Todo en una sola plataforma centralizada</p>
+                        <h4 className="font-semibold text-base sm:text-lg mb-1">Unifica operaciones</h4>
+                        <p className="text-muted-foreground text-xs sm:text-sm">Todo en una sola plataforma centralizada</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Clock className="h-6 w-6 text-verde flex-shrink-0 mt-1" />
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-verde flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-lg mb-1">Reduce tiempos de entrega</h4>
-                        <p className="text-muted-foreground text-sm">De 15 minutos a 7 minutos promedio</p>
+                        <h4 className="font-semibold text-base sm:text-lg mb-1">Reduce tiempos de entrega</h4>
+                        <p className="text-muted-foreground text-xs sm:text-sm">De 15 minutos a 7 minutos promedio</p>
                       </div>
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <FileCheck className="h-6 w-6 text-morado flex-shrink-0 mt-1" />
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <FileCheck className="h-5 w-5 sm:h-6 sm:w-6 text-morado flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-lg mb-1">Trazabilidad y control</h4>
-                        <p className="text-muted-foreground text-sm">Seguimiento completo de cada proceso</p>
+                        <h4 className="font-semibold text-base sm:text-lg mb-1">Trazabilidad y control</h4>
+                        <p className="text-muted-foreground text-xs sm:text-sm">Seguimiento completo de cada proceso</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <TrendingUp className="h-6 w-6 text-amarillo flex-shrink-0 mt-1" />
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 text-amarillo flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-lg mb-1">Analítica en tiempo real</h4>
-                        <p className="text-muted-foreground text-sm">Dashboards con métricas operativas</p>
+                        <h4 className="font-semibold text-base sm:text-lg mb-1">Analítica en tiempo real</h4>
+                        <p className="text-muted-foreground text-xs sm:text-sm">Dashboards con métricas operativas</p>
                       </div>
                     </div>
                   </div>
@@ -298,7 +298,7 @@ const Index = () => {
               </GlassCard>
 
               <GlassCard delay={0.5} className="md:col-span-2 border-t-4 border-acento">
-                <p className="text-center text-lg text-muted-foreground italic">
+                <p className="text-center text-sm sm:text-base md:text-lg text-muted-foreground italic">
                   Arquitectura orientada a eficiencia operativa y experiencia de usuario
                 </p>
               </GlassCard>
@@ -315,7 +315,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4"
               >
                 Impacto{" "}
                 <span className="text-verde">medible</span>
@@ -326,7 +326,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4"
               >
                 Resultados reales en clínicas y laboratorios
               </motion.p>
@@ -360,7 +360,7 @@ const Index = () => {
             </div>
 
             <GlassCard delay={0.8} className="max-w-3xl mx-auto text-center">
-              <p className="text-muted-foreground italic">
+              <p className="text-sm sm:text-base text-muted-foreground italic">
                 Métricas basadas en implementación piloto en Conspat y análisis operativo de clínicas pequeñas en Venezuela
               </p>
             </GlassCard>
@@ -376,7 +376,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4"
               >
                 Caso real:{" "}
                 <span className="text-morado">Conspat</span>
@@ -385,8 +385,8 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <GlassCard delay={0.4} className="border-l-4 border-destructive">
-                <h3 className="text-2xl font-semibold mb-4 text-destructive">Antes</h3>
-                <ul className="space-y-3 text-muted-foreground">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-destructive">Antes</h3>
+                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-destructive mt-1">•</span>
                     <span>Recepción con carpetas físicas y llamadas constantes</span>
@@ -407,8 +407,8 @@ const Index = () => {
               </GlassCard>
 
               <GlassCard delay={0.5} className="border-l-4 border-verde">
-                <h3 className="text-2xl font-semibold mb-4 text-verde">Después</h3>
-                <ul className="space-y-3 text-muted-foreground">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-verde">Después</h3>
+                <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-verde mt-1">•</span>
                     <span>Dashboard digital con trazabilidad completa</span>
@@ -430,13 +430,13 @@ const Index = () => {
             </div>
 
             <GlassCard delay={0.7} className="max-w-3xl mx-auto border-l-4 border-acento">
-              <div className="flex gap-4 items-start">
-                <MessageCircle className="h-8 w-8 text-acento flex-shrink-0 mt-1" />
+              <div className="flex gap-3 sm:gap-4 items-start">
+                <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8 text-acento flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-xl italic mb-2 text-foreground/90">
+                  <p className="text-lg sm:text-xl italic mb-2 text-foreground/90">
                     "Los dueños dejaron de vivir en WhatsApp. Ya no necesitan tres grupos distintos para saber si entregaron un examen."
                   </p>
-                  <p className="text-muted-foreground">— Equipo Solware, implementación Conspat</p>
+                  <p className="text-sm sm:text-base text-muted-foreground">— Equipo Solware, implementación Conspat</p>
                 </div>
               </div>
             </GlassCard>
@@ -446,11 +446,11 @@ const Index = () => {
         {/* Slide 7 - La Cruda Realidad */}
         <Slide>
           <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent px-4">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent px-3 sm:px-4">
                 La Cruda Realidad
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4">
                 Así trabajaban antes de implementar Solware
               </p>
             </div>
@@ -472,14 +472,14 @@ const Index = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold px-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4">
                 Listos para{" "}
                 <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
                   inspirar y aportar
                 </span>
               </h2>
 
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4">
                 Solicitamos un espacio de 30 minutos para presentar el caso de Solware 
                 y conversar sobre cómo acelerar la transformación digital en salud.
               </p>
@@ -503,8 +503,8 @@ const Index = () => {
             </motion.div>
 
             <GlassCard delay={0.4} className="max-w-2xl mx-auto">
-              <h3 className="text-xl font-semibold mb-4">Información de contacto</h3>
-              <div className="space-y-2 text-muted-foreground">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Información de contacto</h3>
+              <div className="space-y-2 text-sm sm:text-base text-muted-foreground">
                 <p className="flex items-center justify-center gap-2">
                   <Mail className="h-4 w-4 text-acento" />
                   <a 
