@@ -4,7 +4,6 @@ import { Slide } from "@/components/Slide";
 import { MetricCard } from "@/components/MetricCard";
 import { GlassCard } from "@/components/GlassCard";
 import { Logo } from "@/components/Logo";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { VideoSlide } from "@/components/VideoSlide";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -485,22 +484,6 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap gap-4 justify-center"
-            >
-              <Button size="lg" className="bg-acento hover:bg-acento/90 text-primary-foreground shadow-glow">
-                <Mail className="mr-2 h-5 w-5" />
-                Contactar para agenda
-              </Button>
-              <Button size="lg" variant="outline" className="border-acento/30 hover:bg-acento/10">
-                <FileCheck className="mr-2 h-5 w-5" />
-                Descargar dossier
-              </Button>
-            </motion.div>
 
             <GlassCard delay={0.4} className="max-w-2xl mx-auto">
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Información de contacto</h3>
@@ -551,7 +534,6 @@ const Index = () => {
           </div>
         </Slide>
       </HorizontalCarousel>
-      <WhatsAppButton />
     </>
   );
 };
