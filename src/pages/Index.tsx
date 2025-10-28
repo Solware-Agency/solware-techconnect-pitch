@@ -101,7 +101,7 @@ const Index = () => {
               className="pt-3 sm:pt-4 md:pt-6"
             >
               <GlassCard className="max-w-4xl mx-auto px-3">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed break-words">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed break-words text-center">
                   Transformando la salud venezolana: del caos operativo a la eficiencia digital
                 </p>
               </GlassCard>
@@ -143,7 +143,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 text-justify"
               >
                 En clínicas y laboratorios se pierden horas por procesos manuales,
                 reimpresiones, dependencia de memorias individuales y cero trazabilidad.
@@ -200,7 +200,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify px-3 sm:px-4"
               >
                 El problema no es de salud; es de operatividad. Falta flujo, automatización y visibilidad.
               </motion.p>
@@ -239,10 +239,10 @@ const Index = () => {
                   <Target className="h-6 w-6 sm:h-8 sm:w-8 text-amarillo flex-shrink-0" />
                   <div>
                     <h3 className="text-lg sm:text-xl font-semibold mb-3 text-foreground">La verdad oculta</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 text-justify">
                       En una clínica pequeña, se pierden unas <strong className="text-amarillo">500 horas al año</strong> solo en búsquedas y re-impresiones.
                     </p>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-justify">
                       Eso equivale a <strong className="text-verde">$5,000 - $10,000 USD</strong> perdidos anualmente y <strong className="text-acento">200 pacientes</strong> no atendidos.
                     </p>
                   </div>
@@ -274,7 +274,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 text-justify"
               >
                 Plataforma que centraliza pacientes, pagos, reportes y analítica para clínicas y laboratorios.
               </motion.p>
@@ -288,14 +288,14 @@ const Index = () => {
                       <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-acento flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-base sm:text-lg mb-1">Unifica operaciones</h4>
-                        <p className="text-muted-foreground text-xs sm:text-sm">Todo en una sola plataforma centralizada</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm text-justify">Todo en una sola plataforma centralizada</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2 sm:gap-3">
                       <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-verde flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-base sm:text-lg mb-1">Reduce tiempos de entrega</h4>
-                        <p className="text-muted-foreground text-xs sm:text-sm">De 15 minutos a 7 minutos promedio</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm text-justify">De 15 minutos a 7 minutos promedio</p>
                       </div>
                     </div>
                   </div>
@@ -304,14 +304,14 @@ const Index = () => {
                       <FileCheck className="h-5 w-5 sm:h-6 sm:w-6 text-morado flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-base sm:text-lg mb-1">Trazabilidad y control</h4>
-                        <p className="text-muted-foreground text-xs sm:text-sm">Seguimiento completo de cada proceso</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm text-justify">Seguimiento completo de cada proceso</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2 sm:gap-3">
                       <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 text-amarillo flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-base sm:text-lg mb-1">Analítica en tiempo real</h4>
-                        <p className="text-muted-foreground text-xs sm:text-sm">Dashboards con métricas operativas</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm text-justify">Dashboards con métricas operativas</p>
                       </div>
                     </div>
                   </div>
@@ -319,7 +319,7 @@ const Index = () => {
               </GlassCard>
 
               <GlassCard delay={0.5} className="md:col-span-2 border-t-4 border-acento">
-                <p className="text-center text-sm sm:text-base md:text-lg text-muted-foreground italic">
+                <p className="text-center text-sm sm:text-base md:text-lg text-muted-foreground italic text-justify">
                   Arquitectura orientada a eficiencia operativa y experiencia de usuario
                 </p>
               </GlassCard>
@@ -347,7 +347,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4 text-justify"
               >
                 Resultados reales en clínicas y laboratorios
               </motion.p>
@@ -471,7 +471,7 @@ const Index = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent px-3 sm:px-4">
                 La Cruda Realidad
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4 text-justify">
                 Así trabajaban antes de implementar Solware
               </p>
             </div>
@@ -499,8 +499,8 @@ const Index = () => {
                 </span>
               </h2>
 
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4">
-                Solicitamos un espacio de 30 minutos para presentar el caso de Solware 
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 text-justify">
+                Solicitamos un espacio de 30 minutos para presentar el caso de Solware
                 y conversar sobre cómo acelerar la transformación digital en salud.
               </p>
             </motion.div>

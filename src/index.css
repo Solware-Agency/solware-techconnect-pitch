@@ -84,27 +84,27 @@ All colors MUST be HSL.
     }
   }
 
-  /* Custom scrollbar for main container */
+  /* Hide scrollbar but keep functionality */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 0px;
+    height: 0px;
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--fondo));
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--acento) / 0.3);
-    border-radius: 4px;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--acento) / 0.5);
+    background: transparent;
   }
 
   * {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--acento) / 0.3) hsl(var(--fondo));
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   /* Improve text contrast on mobile */
