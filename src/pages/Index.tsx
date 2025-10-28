@@ -150,21 +150,6 @@ const Index = () => {
                 </div>
               </div>
             </GlassCard>
-
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-8">
-              <MetricCard
-                icon={Clock}
-                value="1000+"
-                label="Horas perdidas al año por búsquedas y reimpresiones"
-                delay={0.6}
-              />
-              <MetricCard
-                icon={Users}
-                value="200+"
-                label="Pacientes que no pudieron ser atendidos"
-                delay={0.7}
-              />
-            </div>
           </div>
         </section>
 
