@@ -156,49 +156,6 @@ export function HorizontalCarousel({ children, onSlideChange, scrollToSlideRef }
       >
         {children}
       </div>
-
-      {/* Navigation arrows */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-4">
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() => scrollToSlide(Math.max(currentSlide - 1, 0))}
-          disabled={currentSlide === 0}
-          className="bg-tarjeta/80 backdrop-blur-md border-acento/30 hover:bg-acento/20 disabled:opacity-30"
-          aria-label="Diapositiva anterior"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </Button>
-
-        {/* Pagination dots */}
-        <div className="flex gap-2">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToSlide(index)}
-              className={`h-2 rounded-full transition-all ${
-                index === currentSlide
-                  ? "w-8 bg-acento"
-                  : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-              }`}
-              aria-label={`Ir a diapositiva ${index + 1}`}
-              aria-current={index === currentSlide ? "true" : undefined}
-            />
-          ))}
-        </div>
-
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() => scrollToSlide(Math.min(currentSlide + 1, totalSlides - 1))}
-          disabled={currentSlide === totalSlides - 1}
-          className="bg-tarjeta/80 backdrop-blur-md border-acento/30 hover:bg-acento/20 disabled:opacity-30"
-          aria-label="Siguiente diapositiva"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </Button>
-      </div>
-
     </div>
   );
 }
