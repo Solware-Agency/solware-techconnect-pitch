@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 interface HorizontalCarouselProps {
   children: React.ReactNode[];
   onSlideChange?: (index: number) => void;
+  scrollToSlideRef?: React.MutableRefObject<((index: number) => void) | null>;
 }
 
-export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarouselProps) {
+export function HorizontalCarousel({ children, onSlideChange, scrollToSlideRef }: HorizontalCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -15,6 +16,30 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
   const touchStartX = useRef<number>(0);
   const touchStartY = useRef<number>(0);
   const isDragging = useRef<boolean>(false);
+
+  const scrollToSlide = (index: number) => {
+    if (containerRef.current) {
+      if (isMobile) {
+        const slideHeight = containerRef.current.clientHeight;
+        containerRef.current.scrollTo({
+          top: slideHeight * index,
+          behavior: "smooth",
+        });
+      } else {
+        const slideWidth = containerRef.current.clientWidth;
+        containerRef.current.scrollTo({
+          left: slideWidth * index,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (scrollToSlideRef) {
+      scrollToSlideRef.current = scrollToSlide;
+    }
+  }, [scrollToSlideRef, isMobile]);
 
   // Detect mobile viewport
   useEffect(() => {
@@ -109,24 +134,6 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
     isDragging.current = false;
   };
 
-  const scrollToSlide = (index: number) => {
-    if (containerRef.current) {
-      if (isMobile) {
-        const slideHeight = containerRef.current.clientHeight;
-        containerRef.current.scrollTo({
-          top: slideHeight * index,
-          behavior: "smooth",
-        });
-      } else {
-        const slideWidth = containerRef.current.clientWidth;
-        containerRef.current.scrollTo({
-          left: slideWidth * index,
-          behavior: "smooth",
-        });
-      }
-    }
-  };
-
   return (
     <div className="relative h-screen w-screen overflow-hidden">
       {/* Scroll container - horizontal on desktop, vertical on mobile */}
@@ -192,10 +199,6 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
         </Button>
       </div>
 
-      {/* Slide counter */}
-      <div className="fixed top-6 right-6 z-[60] text-xs sm:text-sm text-muted-foreground/70 bg-tarjeta/60 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-border/20">
-        {currentSlide + 1} / {totalSlides}
-      </div>
     </div>
   );
 }

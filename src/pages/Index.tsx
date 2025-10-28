@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { HorizontalCarousel } from "@/components/HorizontalCarousel";
 import { Slide } from "@/components/Slide";
 import { MetricCard } from "@/components/MetricCard";
@@ -6,6 +6,7 @@ import { GlassCard } from "@/components/GlassCard";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { VideoSlide } from "@/components/VideoSlide";
+import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { 
@@ -24,20 +25,34 @@ import {
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const scrollToSlideRef = useRef<((index: number) => void) | null>(null);
+
+  const handleSlideClick = (index: number) => {
+    if (scrollToSlideRef.current) {
+      scrollToSlideRef.current(index);
+    }
+  };
 
   return (
     <>
-      <HorizontalCarousel onSlideChange={setActiveSlide}>
+      <Navbar
+        currentSlide={activeSlide}
+        totalSlides={8}
+        onSlideClick={handleSlideClick}
+      />
+      <HorizontalCarousel
+        onSlideChange={setActiveSlide}
+        scrollToSlideRef={scrollToSlideRef}
+      >
         {/* Slide 1 - Portada */}
         <Slide className="relative flex items-center justify-center">
-          <Logo variant="image" href="https://www.solware.agency" className="absolute top-8 left-8 z-10" />
           <div className="text-center space-y-8 w-full">
 
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight px-2"
+              className="text-6xl md:text-7xl font-bold leading-tight"
             >
               <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
                 Solware x TechConnect
@@ -50,10 +65,10 @@ const Index = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="space-y-4 flex flex-col items-center justify-center"
             >
-              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl text-center px-4">
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl text-center">
                 Propuesta de ponencia (30 minutos)
               </p>
-              <p className="text-base sm:text-lg text-muted-foreground text-center px-4">
+              <p className="text-lg text-muted-foreground text-center">
                 12 y 13 de noviembre · Hotel Manantial, Valencia
               </p>
             </motion.div>
@@ -64,8 +79,8 @@ const Index = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="pt-8"
             >
-              <GlassCard className="max-w-4xl mx-auto w-full">
-                <p className="text-xl sm:text-2xl md:text-3xl font-medium leading-relaxed">
+              <GlassCard className="max-w-3xl mx-auto">
+                <p className="text-2xl md:text-3xl font-medium leading-relaxed">
                   Transformando la salud venezolana: del caos operativo a la eficiencia digital
                 </p>
               </GlassCard>
@@ -449,7 +464,6 @@ const Index = () => {
 
         {/* Slide 8 - CTA para Organizadores */}
         <Slide className="relative">
-          <Logo variant="image" href="https://www.solware.agency" className="absolute top-8 left-8 z-10" />
           <div className="space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
