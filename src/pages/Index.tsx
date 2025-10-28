@@ -3,7 +3,6 @@ import { MetricCard } from "@/components/MetricCard";
 import { GlassCard } from "@/components/GlassCard";
 import { VideoSlide } from "@/components/VideoSlide";
 import { Navbar } from "@/components/Navbar";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
@@ -61,7 +60,6 @@ const Index = () => {
         totalSlides={8}
         onSlideClick={scrollToSection}
       />
-      <WhatsAppButton />
       <div
         ref={containerRef}
         className="overflow-y-auto overflow-x-hidden h-screen scroll-smooth"
