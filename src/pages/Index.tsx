@@ -66,7 +66,7 @@ const Index = () => {
         style={{ scrollPaddingTop: '80px' }}
       >
         {/* Section 1 - Portada */}
-        <section data-section="0" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="0" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20">
           <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 w-full">
 
             <motion.h1
@@ -86,7 +86,7 @@ const Index = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="space-y-2 sm:space-y-3 flex flex-col items-center justify-center"
             >
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl text-center px-3 sm:px-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto text-center px-3 sm:px-4">
                 Propuesta de ponencia (30 minutos)
               </p>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-center px-3 sm:px-4">
@@ -111,7 +111,7 @@ const Index = () => {
         </section>
 
         {/* Section 2 - La Necesidad */}
-        <section data-section="1" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="1" className="md:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-24">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.div
@@ -132,7 +132,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 text-justify"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 text-center"
               >
                 En clínicas y laboratorios se pierden horas por procesos manuales,
                 reimpresiones, dependencia de memorias individuales y cero trazabilidad.
@@ -154,7 +154,7 @@ const Index = () => {
         </section>
 
         {/* Section 3 - El Diagnóstico */}
-        <section data-section="2" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="2" className="md:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-24">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -174,7 +174,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify px-3 sm:px-4"
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-center px-3 sm:px-4"
               >
                 El problema no es de salud; es de operatividad. Falta flujo, automatización y visibilidad.
               </motion.p>
@@ -227,7 +227,7 @@ const Index = () => {
         </section>
 
         {/* Section 4 - La Solución: Solware */}
-        <section data-section="3" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="3" className="md:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-24">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -248,7 +248,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 text-justify"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 text-center"
               >
                 Plataforma que centraliza pacientes, pagos, reportes y analítica para clínicas y laboratorios.
               </motion.p>
@@ -293,7 +293,7 @@ const Index = () => {
               </GlassCard>
 
               <GlassCard delay={0.5} className="md:col-span-2 border-t-4 border-acento">
-                <p className="text-center text-sm sm:text-base md:text-lg text-muted-foreground italic text-justify">
+                <p className="text-center text-sm sm:text-base md:text-lg text-muted-foreground italic">
                   Arquitectura orientada a eficiencia operativa y experiencia de usuario
                 </p>
               </GlassCard>
@@ -302,7 +302,7 @@ const Index = () => {
         </section>
 
         {/* Section 5 - Impacto y Métricas */}
-        <section data-section="4" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="4" className="md:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-24">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -321,7 +321,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4 text-justify"
+                className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4 text-center"
               >
                 Resultados reales en clínicas y laboratorios
               </motion.p>
@@ -363,7 +363,7 @@ const Index = () => {
         </section>
 
         {/* Section 6 - Caso / Testimonios */}
-        <section data-section="5" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="5" className="md:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-24">
           <div className="space-y-12">
             <div className="text-center space-y-6 mb-8">
               <motion.h2
@@ -439,13 +439,13 @@ const Index = () => {
         </section>
 
         {/* Section 7 - La Cruda Realidad */}
-        <section data-section="6" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="6" className="md:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-24">
           <div className="w-full max-w-6xl">
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent px-3 sm:px-4">
                 La Cruda Realidad
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4 text-justify">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-3 sm:px-4 text-center">
                 Así trabajaban antes de implementar Solware
               </p>
             </div>
@@ -457,7 +457,7 @@ const Index = () => {
         </section>
 
         {/* Section 8 - CTA para Organizadores */}
-        <section data-section="7" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <section data-section="7" className="md:min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 py-24">
           <div className="space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -511,7 +511,7 @@ const Index = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="pt-8"
+              className="pt-8 flex justify-center"
             >
               <p className="text-sm text-muted-foreground">
                 Presentación de referencia disponible en:{" "}
