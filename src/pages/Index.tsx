@@ -154,7 +154,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto pt-8">
               <MetricCard
                 icon={Clock}
-                value="500+"
+                value="1000+"
                 label="Horas perdidas al año por búsquedas y reimpresiones"
                 delay={0.6}
               />
@@ -179,7 +179,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4"
               >
-                El diagnóstico: no es de{" "}
+                El diagnóstico no es de{" "}
                 <span className="text-verde">salud</span>, es de{" "}
                 <span className="text-acento">operatividad</span>
               </motion.h2>
@@ -229,7 +229,7 @@ const Index = () => {
                   <div>
                     <h3 className="text-lg sm:text-xl font-semibold mb-3 text-foreground">La verdad oculta</h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 text-justify">
-                      En una clínica pequeña, se pierden unas <strong className="text-amarillo">500 horas al año</strong> solo en búsquedas y re-impresiones.
+                      En una clínica pequeña, se pierden unas <strong className="text-amarillo">1000 horas al año</strong> solo en búsquedas y re-impresiones.
                     </p>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-justify">
                       Eso equivale a <strong className="text-verde">$5,000 - $10,000 USD</strong> perdidos anualmente y <strong className="text-acento">200 pacientes</strong> no atendidos.
@@ -252,7 +252,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4"
               >
-                La solución:{" "}
+                La solución{" "}
                 <span className="bg-gradient-to-r from-acento to-morado bg-clip-text text-transparent">
                   Solware
                 </span>
@@ -345,7 +345,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <MetricCard
                 icon={Clock}
-                value="500+"
+                value="1000+"
                 label="Horas ahorradas al año"
                 delay={0.4}
               />
@@ -388,7 +388,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold px-3 sm:px-4"
               >
-                Caso real:{" "}
+                Caso real{" "}
                 <span className="text-morado">Conspat</span>
               </motion.h2>
             </div>
