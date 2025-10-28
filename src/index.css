@@ -65,9 +65,12 @@ All colors MUST be HSL.
     padding: 0;
   }
   
-  /* Justified text for paragraphs */
+  /* Justified text for paragraphs with word-wrap */
   p {
     @apply text-justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   
   /* Disable vertical scroll globally */

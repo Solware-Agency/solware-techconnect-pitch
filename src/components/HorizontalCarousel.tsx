@@ -193,7 +193,7 @@ export function HorizontalCarousel({ children, onSlideChange }: HorizontalCarous
       </div>
 
       {/* Slide counter */}
-      <div className="fixed top-8 right-8 z-[60] text-sm text-muted-foreground bg-tarjeta/80 backdrop-blur-md px-4 py-2 rounded-full border border-border/30">
+      <div className="fixed top-6 right-6 z-[60] text-xs sm:text-sm text-muted-foreground/70 bg-tarjeta/60 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-border/20">
         {currentSlide + 1} / {totalSlides}
       </div>
     </div>
