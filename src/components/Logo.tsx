@@ -10,7 +10,7 @@ export function Logo({ className = "", variant = "text", href }: LogoProps) {
       <img
         src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/imagenes/Logos/SolHub/Logo_solhub.webp"
         alt="Solware Logo"
-        className="h-12 md:h-16 w-auto"
+        className="h-10 md:h-12 w-auto object-contain"
         loading="eager"
       />
     );

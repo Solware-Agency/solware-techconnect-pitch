@@ -46,13 +46,13 @@ const Index = () => {
       >
         {/* Slide 1 - Portada */}
         <Slide className="relative flex items-center justify-center">
-          <div className="text-center space-y-8 w-full">
+          <div className="text-center space-y-6 md:space-y-8 w-full">
 
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-6xl md:text-7xl font-bold leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight px-4"
             >
               <span className="bg-gradient-to-r from-acento via-morado to-fucsia bg-clip-text text-transparent">
                 Solware x TechConnect
@@ -63,12 +63,12 @@ const Index = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="space-y-4 flex flex-col items-center justify-center"
+              className="space-y-3 flex flex-col items-center justify-center"
             >
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl text-center">
+              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl text-center px-4">
                 Propuesta de ponencia (30 minutos)
               </p>
-              <p className="text-lg text-muted-foreground text-center">
+              <p className="text-base md:text-lg text-muted-foreground text-center px-4">
                 12 y 13 de noviembre · Hotel Manantial, Valencia
               </p>
             </motion.div>
@@ -77,10 +77,10 @@ const Index = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="pt-8"
+              className="pt-4 md:pt-6"
             >
-              <GlassCard className="max-w-3xl mx-auto">
-                <p className="text-2xl md:text-3xl font-medium leading-relaxed">
+              <GlassCard className="max-w-4xl mx-auto">
+                <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed break-words">
                   Transformando la salud venezolana: del caos operativo a la eficiencia digital
                 </p>
               </GlassCard>
@@ -90,7 +90,7 @@ const Index = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="pt-8"
+              className="pt-4 md:pt-6"
             >
               <Button size="lg" className="bg-acento hover:bg-acento/90 text-primary-foreground shadow-glow">
                 Explorar presentación

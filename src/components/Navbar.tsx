@@ -24,9 +24,9 @@ export function Navbar({ currentSlide, totalSlides, onSlideClick }: NavbarProps)
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-tarjeta/60 backdrop-blur-md border-b border-border/30"
+      className="fixed top-0 left-0 right-0 z-50 bg-tarjeta/70 backdrop-blur-md border-b border-border/30 shadow-sm"
     >
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
         <Logo variant="image" href="https://www.solware.agency" className="flex-shrink-0" />
 
         <div className="hidden md:flex items-center gap-2 flex-1 justify-center max-w-3xl mx-4">
@@ -75,13 +75,15 @@ export function Navbar({ currentSlide, totalSlides, onSlideClick }: NavbarProps)
               />
             ))}
           </div>
-          <span className="text-sm text-muted-foreground whitespace-nowrap">
+          <span className="text-sm font-medium text-foreground whitespace-nowrap">
             {currentSlide + 1}/{totalSlides}
           </span>
         </div>
 
-        <div className="hidden md:block text-sm text-muted-foreground whitespace-nowrap">
-          {currentSlide + 1} / {totalSlides}
+        <div className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground whitespace-nowrap bg-tarjeta/50 px-3 py-1.5 rounded-lg border border-border/30">
+          <span className="text-acento">{currentSlide + 1}</span>
+          <span className="text-muted-foreground">/</span>
+          <span>{totalSlides}</span>
         </div>
       </div>
     </motion.nav>
